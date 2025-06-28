@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.hitcapp">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.HITCApp"
+        tools:targetApi="31">
+
+        <!-- Trang chi tiết sản phẩm -->
+        <activity
+            android:name=".ProductDetailActivity"
+            android:exported="false" />
+
+        <!-- Trang danh sách sản phẩm -->
+        <activity
+            android:name=".ProductListActivity"
+            android:exported="false" />
+
+        <!-- Trang thanh toán -->
+        <activity
+            android:name=".CheckoutActivity"
+            android:exported="false" />
+
+        <!-- Trang giỏ hàng -->
+        <activity
+            android:name=".CartActivity"
+            android:exported="false" />
+
+        <!-- Trang đăng ký -->
+        <activity
+            android:name=".RegisterActivity"
+            android:exported="false" />
+
+        <!-- Trang chính sau khi đăng nhập -->
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+
+        <!-- Trang đăng nhập là màn hình khởi động đầu tiên -->
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+</manifest>
