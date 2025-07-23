@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -19,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main); // Đảm bảo layout có đầy đủ ID
+        setContentView(R.layout.activity_main);
 
         // Ánh xạ view
         listView = findViewById(R.id.product_list);
@@ -86,6 +87,10 @@ public class MainActivity extends AppCompatActivity {
         // 📱 Bắt sự kiện click item để mở ProductDetailActivity
         listView.setOnItemClickListener((parent, view, position, id) -> {
             Product selected = products.get(position);
+
+            // Kiểm tra sự kiện click hoạt động chưa
+            Toast.makeText(this, "Clicked: " + selected.getName(), Toast.LENGTH_SHORT).show();
+
             Intent detailIntent = new Intent(this, ProductDetailActivity.class);
             detailIntent.putExtra("name", selected.getName());
             detailIntent.putExtra("price", selected.getPrice());
@@ -94,4 +99,4 @@ public class MainActivity extends AppCompatActivity {
             startActivity(detailIntent);
         });
     }
-}
+    }
